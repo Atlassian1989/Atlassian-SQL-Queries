@@ -1,0 +1,1 @@
+select CAST(project.pkey as varchar) + CAST(jiraissue.issuenum as varchar) from jiraissue JOIN project on project.ID=jiraissue.PROJECT
