@@ -1,5 +1,3 @@
 SELECT pkey FROM project WHERE ID IN (SELECT PID from projectroleactor where PID in 
-(select SOURCE_NODE_ID from nodeassociation where ROLETYPEPARAMETER LIKE '%erende%')
+(select SOURCE_NODE_ID from nodeassociation where ROLETYPEPARAMETER LIKE '%Ambarnikova%')
  AND ROLETYPE <> 'atlassian-group-role-actor')
- 
- 
