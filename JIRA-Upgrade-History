@@ -1,0 +1,12 @@
+SELECT ID, TARGETVERSION,TIMEPERFORMED,
+       DATEDIFF(DAY, TIMEPERFORMED,COALESCE(
+       (
+       SELECT TOP 1 TIMEPERFORMED
+       FROM upgradeversionhistory uvi
+       WHERE uvi.ID > uv.ID 
+       ORDER BY
+             ID
+       ), 0)) AS diff
+FROM upgradeversionhistory uv
+ORDER BY
+      ID
