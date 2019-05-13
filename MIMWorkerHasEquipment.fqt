@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<UIData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ObjectType>Person</ObjectType>
+  <FilterAttributesAll>false</FilterAttributesAll>
+  <FilterAttributes>
+    <string>AccountName</string>
+    <string>WorkerStatus</string>
+    <string>ExternalEmail</string>
+    <string>Division</string>
+    <string>Email</string>
+    <string>EmployeeType</string>
+    <string>Manager</string>
+  </FilterAttributes>
+  <ReferenceFormat>{1}</ReferenceFormat>
+  <Query>SELECT 
+	AccountName AS [Account Name]
+	,WorkerStatus AS [Account Status]
+	,Manager.DisplayName AS [Manager]
+	,ExternalEmail AS [Business email]
+	,Email AS [E-mail]
+	,EmployeeType AS [Employee Type]
+	,Division AS [Division]
+FROM /Person[(WorkerStatus = 'Active') and (EmployeeType = 'MIMWorker')]
+</Query>
+</UIData>

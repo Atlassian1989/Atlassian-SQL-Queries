@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<UIData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ObjectType>Group</ObjectType>
+  <FilterAttributesAll>false</FilterAttributesAll>
+  <FilterAttributes>
+    <string>AccountName</string>
+    <string>DisplayName</string>
+    <string>DisplayedOwner</string>
+    <string>Email</string>
+    <string>Type</string>
+  </FilterAttributes>
+  <ReferenceFormat>{1}</ReferenceFormat>
+  <Query>SELECT 
+	AccountName AS [Account Name]
+	,DisplayedOwner.DisplayName AS [Displayed Owner]
+	,DisplayName AS [Display Name]
+	,Email AS [E-mail]
+	,Type AS [Type]
+FROM /Group
+</Query>
+</UIData>

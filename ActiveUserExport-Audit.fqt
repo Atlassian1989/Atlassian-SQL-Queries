@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<UIData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ObjectType>Person</ObjectType>
+  <FilterAttributesAll>false</FilterAttributesAll>
+  <FilterAttributes>
+    <string>EmployeeEndDate</string>
+    <string>AccountName</string>
+    <string>WorkerStatus</string>
+    <string>ExternalEmail</string>
+    <string>DisplayName</string>
+    <string>Email</string>
+    <string>EmployeeType</string>
+    <string>Manager</string>
+    <string>WorkerSubtype</string>
+  </FilterAttributes>
+  <ReferenceFormat>{1}</ReferenceFormat>
+  <Query>SELECT 
+	DisplayName AS [Display Name]
+	,Email AS [E-mail]
+	,EmployeeType AS [Employee Type]
+	,WorkerSubtype AS [Worker Subtype]
+	,Manager.DisplayName AS [Manager]
+	,WorkerStatus AS [Account Status]
+	,AccountName AS [Account Name]
+	,ExternalEmail AS [Business email]
+	,EmployeeEndDate AS [Account End Date]
+FROM /Person[((EmployeeType='Employee') or (EmployeeType="Intern") or (EmployeeType ="MIMWorker") or (EmployeeType="ContingentWorker")) and (WorkerStatus = 'Active')]
+</Query>
+</UIData>
